@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="spendingChart" width="400" height="200"></canvas>
+
+<script>
+    const labels = {{ labels | tojson }};
+    const values = {{ values | tojson }};
+</script>
+
+<h2>Upload Bank Statement</h2>
+<form action="{{ url_for('routes.upload') }}" method="POST" enctype="multipart/form-data">
+  <input type="file" name="statement" accept=".csv" required>
+  <button type="submit">Upload</button>
+</form>
+
+</body>
+</html>
